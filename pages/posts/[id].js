@@ -4,6 +4,10 @@ import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
+const components = {
+  blockquote: (props) => <blockquote className="lead fw-lighter lh-sm bg-light m-2 p-2" {...props} />,
+}
+
 const Post = ({ source, frontMatter }) => {
   return (
     <div className="container">
@@ -23,7 +27,7 @@ const Post = ({ source, frontMatter }) => {
           </Link>
         </p>
         <div>
-          <MDXRemote {...source} />
+          <MDXRemote {...source} components={components} />
         </div>
       </article>
       <p>
