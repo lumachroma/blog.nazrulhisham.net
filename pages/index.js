@@ -17,7 +17,7 @@ const Home = () => {
     <>
       <div className="px-4 py-5 my-5 text-center">
         <a className="btn"><Image src={helloImage} width={120} height={120} onClick={hanldeToggleHelloImage} /></a>
-        <h1 className="display-5 fw-bold">Hey, I'm Nazrul Hisham</h1>
+        <h1 className="display-5 fw-bold">Hey, I'm Naz</h1>
         <div className="col-lg-6 mx-auto">
           <p className="lead mb-4">
             I'm a solution architect, tech lead, software engineer and programmer. {' '}
