@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+.gf-bangers {
+    font-family: 'Bangers', serif;
+}
+.gf-bangers-1x {
+    font-family: 'Bangers', serif;
+    font-size: 1.5rem;
+    line-height: 80% 
+}
+.gf-bangers-2x {
+    font-family: 'Bangers', serif;
+    font-size: 2.0rem;
+    line-height: 80% 
+}
+.gf-bangers-3x {
+    font-family: 'Bangers', serif;
+    font-size: 2.5rem;
+    line-height: 80%;
+}
+.gf-bangers-4x {
+    font-family: 'Bangers', serif;
+    font-size: 3.0rem;
+    line-height: 80%;
+}
