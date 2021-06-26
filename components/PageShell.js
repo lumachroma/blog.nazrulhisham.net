@@ -3,7 +3,7 @@ import Footer from './Footer'
 import Header from './Header'
 
 const PageShell = ({ name, children }) => {
-  const title = `Kookie - ${name}`
+  const title = `nazrulhisham - ${name}`
 
   return (
     <>
