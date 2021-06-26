@@ -16,7 +16,7 @@ const Header = ({ name }) => {
             <Link href="/">
               <a className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                 <Image src={logo} width={80} height={80} />
-                <span className="gf-bangers-2x">Nazrul Hisham</span>
+                <span className="gf-bangers-2x"><span className="gf-bangers-3x text-warning">Naz</span>rul Hisham</span>
               </a>
             </Link>
             <ul className="nav nav-pills">
