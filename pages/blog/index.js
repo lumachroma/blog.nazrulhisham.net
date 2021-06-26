@@ -7,7 +7,13 @@ const Blog = ({ allPostsData }) => {
     <>
       <div className="py-2">
         <h1 className="display-4">Blog</h1>
-        <p className="lead">Some descriptional paragraphs here. Some more descriptional paragraphs here.</p>
+        <p className="lead">
+          In my own time, I code and I create web / mobile applications, {' '}
+          exploring with latest and popular technologies. {' '}
+          With this blog, I wish I could share my experiences and musings {' '}
+          by creating helpful and useful contents for my fellow developers and techies 👨‍💻👩‍💻. {' '}
+          Enjoy and happy coding!
+          </p>
       </div>
 
       {/* TODO: Most Popular Listings */}
