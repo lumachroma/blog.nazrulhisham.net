@@ -8,8 +8,8 @@ const Blog = ({ allPostsData }) => {
       <div className="py-2">
         <h1 className="display-4">Blog</h1>
         <p className="lead">
-          In my own time, I code and I create web / mobile applications, {' '}
-          exploring with latest and popular technologies. {' '}
+          In my free time, I code and I create web / mobile applications, {' '}
+          exploring latest, popular and cool technologies. {' '}
           With this blog, I wish I could share my experiences and musings {' '}
           by creating helpful and useful contents for my fellow developers and techies 👨‍💻👩‍💻. {' '}
           Enjoy and happy coding!

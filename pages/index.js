@@ -21,9 +21,9 @@ const Home = () => {
         <div className="col-lg-6 mx-auto">
           <p className="lead mb-4">
             I'm a solution architect, tech lead, software engineer and programmer. {' '}
-            A creator at heart. I work as Software Developer at Sapura Digital Solutions. {' '}
-            In my own time, I code. Mostly web and mobile applications, {' '}
-            experimenting with latest &amp; trending cutting-edge technology that I could lay my hands on. {' '}
+            A creator at heart. I work as a Software Developer at Sapura Digital Solutions. {' '}
+            In my free time, I code. Mostly web and mobile applications, {' '}
+            experimenting with latest, trending &amp; cool cutting-edge technologies that I could lay my hands on. {' '}
           </p>
           <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <Link href="/blog">
