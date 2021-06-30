@@ -27,10 +27,10 @@ const Home = () => {
           </p>
           <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <Link href="/blog">
-              <a className="btn btn-primary btn-lg px-4 gap-3">Read my Blog</a>
+              <a className="btn btn-primary btn-lg px-4 gap-3 bg-gradient shadow">Read my Blog</a>
             </Link>
             <Link href="https://github.com/lumachroma">
-              <a className="btn btn-outline-secondary btn-lg px-4" target="_blank">Browse my GitHub</a>
+              <a className="btn btn-outline-secondary btn-lg px-4 bg-gradient shadow" target="_blank">Browse my GitHub</a>
             </Link>
           </div>
         </div>

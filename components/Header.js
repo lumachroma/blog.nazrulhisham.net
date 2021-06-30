@@ -16,7 +16,7 @@ const Header = ({ name }) => {
             <Link href="/">
               <a className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                 <Image src={logo} width={80} height={80} />
-                <span className="gf-bangers-2x"><span className="gf-bangers-3x text-warning">Naz</span>rul Hisham</span>
+                <span className="gf-bangers-2x"><span className="text-warning">Naz</span>rul Hisham</span>
               </a>
             </Link>
             <ul className="nav nav-pills">
@@ -53,36 +53,36 @@ const Header = ({ name }) => {
                 <ul className="nav nav-pills">
                   <li className="nav-item">
                     <Link href="/blog">
-                      <a className={`nav-link${isBlog ? " active" : ""}`}>Blog</a>
+                      <a className={`nav-link${isBlog ? " active" : ""}`}><small>Blog</small></a>
                     </Link>
                   </li>
                   <li className="nav-item">
                     <Link href="/about">
-                      <a className={`nav-link${isAbout ? " active" : ""}`}>About</a>
+                      <a className={`nav-link${isAbout ? " active" : ""}`}><small>About</small></a>
                     </Link>
                   </li>
                   <li className="nav-item">
                     <Link href="/portfolio">
-                      <a className={`nav-link${isPortfolio ? " active" : ""}`}>Portfolio</a>
+                      <a className={`nav-link${isPortfolio ? " active" : ""}`}><small>Portfolio</small></a>
                     </Link>
                   </li>
                   <li className="nav-item">
                     <Link href="/">
-                      <a className={`nav-link${isHome ? " active" : ""}`}>Home</a>
+                      <a className={`nav-link${isHome ? " active" : ""}`}><small>Home</small></a>
                     </Link>
                   </li>
                   {/* TODO: Misc Page */}
                   <li className="nav-item">
                     <Link href="/misc">
-                      <a className="nav-link disabled">Misc</a>
+                      <a className="nav-link disabled"><small>Misc</small></a>
                     </Link>
                   </li>
                 </ul>
               </div>
               {/* TODO: Search Component */}
               <form className="d-flex">
-                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button className="btn btn-outline-secondary" type="submit">Search</button>
+                <input className="form-control form-control-sm me-2" type="search" placeholder="Search" aria-label="Search" />
+                <button className="btn btn-outline-secondary btn-sm" type="submit">Search</button>
               </form>
             </div>
           </div>
