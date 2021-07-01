@@ -17,6 +17,20 @@ const Post = ({ source, frontMatter }) => {
         {' '}
         {frontMatter.description}
       </p>
+      {frontMatter.tags
+        && Array.isArray(frontMatter.tags)
+        && frontMatter.tags.length > 0
+        && <p>
+          {frontMatter.tags.map((tag, index) => {
+            return (
+              <span key={index}>
+                <span className="badge bg-light text-secondary">{tag}</span>
+                {' '}
+              </span>
+            )
+          })}
+        </p>
+      }
       <p>
         <Link href="/blog">
           <a className="text-decoration-none">Back</a>
