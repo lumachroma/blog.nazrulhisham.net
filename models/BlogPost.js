@@ -4,7 +4,7 @@ import LikesSchema from './schemas/likes'
 const BlogPostSchema = new mongoose.Schema({
   slug: { type: String, required: true, index: { unique: true } },
   title: { type: String, required: true },
-  description: String,
+  layout: String,
   tags: [String],
   description: String,
   author: String,
