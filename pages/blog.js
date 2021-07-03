@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { getSortedPostsData } from '../../lib/posts'
-import PageShell from '../../components/PageShell'
+import { getSortedPostsData } from '../lib/posts'
+import PageShell from '../components/PageShell'
 
 const Blog = ({ allPostsData }) => {
   return (
