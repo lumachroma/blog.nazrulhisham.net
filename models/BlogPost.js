@@ -10,7 +10,8 @@ const BlogPostSchema = new mongoose.Schema({
   author: String,
   posted: Date,
   likes: [LikesSchema],
-  likesCount: { type: Number, required: true },
+  likesCount: { type: Number, default: 0 },
+  isActive: { type: Boolean, default: true },
 }, { strict: false, timestamps: true })
 
 export default mongoose.models.BlogPost || mongoose.model('BlogPost', BlogPostSchema)
