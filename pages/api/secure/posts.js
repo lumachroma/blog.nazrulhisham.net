@@ -16,4 +16,19 @@ handler.get(async (req, res) => {
   }
 })
 
+handler.post(async (req, res) => {
+  const { body } = req
+  try {
+    const post = await BlogPost.create(body)
+    if (!post) {
+      return res.status(500).json({ success: false })
+    }
+    res.status(201).json({ success: true, data: post })
+  } catch (error) {
+    console.log(error)
+    // res.status(409).json({ success: false })
+    res.status(409).json({ success: false, error })
+  }
+})
+
 export default handler
