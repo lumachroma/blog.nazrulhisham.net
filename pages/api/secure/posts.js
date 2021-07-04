@@ -1,10 +1,11 @@
 import nextConnect from 'next-connect'
-import { all } from '../../../middlewares'
+import { all, passport } from '../../../middlewares'
+import { ensureAdminIsInRoles } from '../../../utils/secureApiRoute'
 import BlogPost from '../../../models/BlogPost'
 
 const handler = nextConnect()
 
-handler.use(all) //TODO: secure routing
+handler.use(all).use(passport.authenticate("jwt", { session: false })).use(ensureAdminIsInRoles)
 
 handler.get(async (req, res) => {
   try {

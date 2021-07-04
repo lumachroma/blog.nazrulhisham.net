@@ -1,8 +1,9 @@
 import nextConnect from 'next-connect'
-import { all } from '../../../../../middlewares'
+import { all, passport } from '../../../../../middlewares'
+import { ensureAdminIsInRoles } from '../../../../../utils/secureApiRoute'
 import BlogPost from '../../../../../models/BlogPost'
 
-const handler = nextConnect() //TODO: secure routing
+const handler = nextConnect().use(passport.authenticate("jwt", { session: false })).use(ensureAdminIsInRoles)
 
 handler.use(all)
 
