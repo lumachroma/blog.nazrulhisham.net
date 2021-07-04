@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useAuth } from '../../lib/auth'
 import { getSortedPostsData } from '../../lib/posts'
 import PageSecuredShell from '../../components/PageSecuredShell'
 
@@ -7,6 +8,7 @@ const endpoint = `/api/secure/posts`
 const contentType = 'application/json'
 
 const Blog = ({ allPostsData }) => {
+  const { user } = useAuth()
   const [isBusy, setIsBusy] = useState(false)
   const [progress, setProgress] = useState(0)
   const [posts, setPosts] = useState([])
@@ -21,7 +23,7 @@ const Blog = ({ allPostsData }) => {
           const slug = postData.id
           const res = await fetch(`/api/secure/posts/${slug}`, {
             method: 'GET',
-            headers: new Headers({ Accept: contentType }),
+            headers: new Headers({ Accept: contentType, 'Authorization': `Bearer ${user.token}` }),
             credentials: 'same-origin',
           })
           const data = await res.json()
@@ -53,7 +55,7 @@ const Blog = ({ allPostsData }) => {
 
       const res = await fetch(url, {
         method: method,
-        headers: new Headers({ Accept: contentType, 'Content-Type': contentType }),
+        headers: new Headers({ Accept: contentType, 'Content-Type': contentType, 'Authorization': `Bearer ${user.token}` }),
         credentials: 'same-origin',
         body: JSON.stringify(posting),
       })
@@ -80,7 +82,7 @@ const Blog = ({ allPostsData }) => {
 
     const res = await fetch(url, {
       method: 'PUT',
-      headers: new Headers({ Accept: contentType, 'Content-Type': contentType }),
+      headers: new Headers({ Accept: contentType, 'Content-Type': contentType, 'Authorization': `Bearer ${user.token}` }),
       credentials: 'same-origin',
     })
     const data = await res.json()
@@ -116,13 +118,15 @@ const Blog = ({ allPostsData }) => {
   return (
     <>
       <div className="py-2">
-        <h1 className="display-4">Secure Blog</h1>
+        <h1 className="display-4">Blog Control</h1>
         <p className="lead">Blog posts administrative panel</p>
       </div>
 
-      {/* <p>
-        {JSON.stringify(posts)}
-      </p> */}
+      <p>
+        <Link href="/secure/dashboard">
+          <a className="text-decoration-none"><i className="bi bi-speedometer2" /> Dashboard</a>
+        </Link>
+      </p>
 
       <div className="table-responsive">
         <table className="table table-sm table-striped table-hover">
@@ -164,7 +168,7 @@ const Blog = ({ allPostsData }) => {
                       </Link>
                       <div className="btn-group btn-group-sm" role="group" aria-label="Basic example">
                         <Link href={`/secure/post/[id]`} as={`/secure/post/${post.post.id}`}>
-                          <a className="btn btn-outline-primary" role="button"><i className="bi bi-speedometer2" /></a>
+                          <a className="btn btn-outline-primary" role="button"><i className="bi bi-gear-wide-connected" /></a>
                         </Link>
                         {!post.found &&
                           <>
@@ -213,12 +217,18 @@ const Blog = ({ allPostsData }) => {
           </div>
         </div>
       }
+
+      <p>
+        <Link href="/secure/dashboard">
+          <a className="text-decoration-none"><i className="bi bi-speedometer2" /> Dashboard</a>
+        </Link>
+      </p>
     </>
   )
 }
 
 const SecureBlogPage = ({ allPostsData }) => (
-  <PageSecuredShell name={"Secure Blog"}>
+  <PageSecuredShell name={"Blog Control"}>
     <Blog allPostsData={allPostsData} />
   </PageSecuredShell>
 )
