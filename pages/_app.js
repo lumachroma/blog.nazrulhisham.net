@@ -1,10 +1,11 @@
 import Head from 'next/head'
+import { AuthProvider } from '../lib/auth'
 import Script from 'next/script'
 import '../styles/fonts.css'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <AuthProvider>
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,7 +15,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Component {...pageProps} />
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossOrigin="anonymous" />
-    </>
+    </AuthProvider>
   )
 }
 
