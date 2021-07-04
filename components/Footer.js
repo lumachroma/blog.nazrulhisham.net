@@ -1,8 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from '../public/me.png'
+import { useAuth } from '../lib/auth'
 
 const Footer = () => {
+  const { user, signout } = useAuth()
+
   return (
     <footer className="mt-auto py-3 bg-light border-top">
       <div className="container">
@@ -24,6 +27,8 @@ const Footer = () => {
               <li><Link href="/"><a className="link-secondary text-decoration-none">Home</a></Link></li>
               <li><Link href="/about"><a className="link-secondary text-decoration-none">About</a></Link></li>
               <li><Link href="/portfolio"><a className="link-secondary text-decoration-none">Portfolio</a></Link></li>
+              {!user && <li><Link href="/login"><a className="link-secondary text-decoration-none">Login</a></Link></li>}
+              {user && <li><a role="button" className="link-secondary text-decoration-none" onClick={signout}>Logout</a></li>}
               <li><Link href="#"><a className="link-secondary text-decoration-none">Misc</a></Link></li>{/* TODO: Misc Page */}
             </ul>
           </div>
