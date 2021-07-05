@@ -8,6 +8,15 @@ import PageShell from '../components/PageShell'
 const Home = () => {
   const [helloImage, setHelloImage] = useState(hello1)
 
+  const tempIcons = [
+    'bi-cpu-fill',
+    'bi-calendar3',
+    'bi-box-seam',
+    'bi-bug-fill',
+    'bi-window-sidebar',
+    'bi-person-badge',
+  ]
+
   const hanldeToggleHelloImage = () => {
     if (helloImage === hello1) setHelloImage(hello2)
     else setHelloImage(hello1)
@@ -47,6 +56,21 @@ const Home = () => {
         <h2>Courses &amp; Tutorials</h2>
         <p className="fw-lighter lh-sm bg-light m-2 p-2">Coming soon...</p>
         <div className="row row-cols-1 row-cols-md-2 g-4">
+          {tempIcons.map((icon, i) => (
+            <div key={i} className="col">
+              <div className="card bg-light border-0 rounded-3">
+                <div className="card-body">
+                  <div className="d-flex align-items-start">
+                    <i className={`bi ${icon} flex-shrink-0 me-3 fs-3 text-primary`} />
+                    <div>
+                      <h5 className="fw-bold mb-0">Course title</h5>
+                      <p>Some descriptional paragraphs here.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
           {[...Array(4)].map((x, i) => (
             <div key={i} className="col">
               <div className="card">
