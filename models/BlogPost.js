@@ -11,6 +11,7 @@ const BlogPostSchema = new mongoose.Schema({
   posted: Date,
   likes: [LikesSchema],
   likesCount: { type: Number, default: 0 },
+  hitsCount: { type: Number, default: 0 },
   isActive: { type: Boolean, default: true },
 }, { strict: false, timestamps: true })
 
