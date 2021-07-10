@@ -14,32 +14,36 @@ const Blog = ({ allPostsData }) => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    let posted = []
-    setIsBusy(true)
-    for (let i = 0; i <= allPostsData.length; i++) {
-      setTimeout(async () => {
-        if (i < allPostsData.length) {
-          const postData = allPostsData[i];
-          const slug = postData.id
-          const res = await fetch(`/api/secure/posts/${slug}`, {
-            method: 'GET',
-            headers: new Headers({ Accept: contentType, 'Authorization': `Bearer ${user.token}` }),
-            credentials: 'same-origin',
-          })
-          const data = await res.json()
-          console.log("useEffect Posted", data)
-          if (data.success) {
-            posted.push({ found: true, post: postData, posted: data.data, isActive: data.data.isActive })
+    const populatePostVersusPostedStats = () => {
+      let posted = []
+      setIsBusy(true)
+      for (let i = 0; i <= allPostsData.length; i++) {
+        setTimeout(async () => {
+          if (i < allPostsData.length) {
+            const postData = allPostsData[i];
+            const slug = postData.id
+            const res = await fetch(`/api/secure/posts/${slug}`, {
+              method: 'GET',
+              headers: new Headers({ Accept: contentType, 'Authorization': `Bearer ${user.token}` }),
+              credentials: 'same-origin',
+            })
+            const data = await res.json()
+            console.log("useEffect Posted", data)
+            if (data.success) {
+              posted.push({ found: true, post: postData, posted: data.data, isActive: data.data.isActive })
+            } else {
+              posted.push({ found: false, post: postData, posted: {}, isActive: false })
+            }
+            setProgress(((i + 1) / allPostsData.length) * 100)
           } else {
-            posted.push({ found: false, post: postData, posted: {}, isActive: false })
+            setPosts(posted)
+            setIsBusy(false)
           }
-          setProgress(((i + 1) / allPostsData.length) * 100)
-        } else {
-          setPosts(posted)
-          setIsBusy(false)
-        }
-      }, (500 * i));
+        }, (500 * i))
+      }
     }
+
+    populatePostVersusPostedStats()
   }, [])
 
   const handlePostPut = async (index, method) => {
