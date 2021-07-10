@@ -60,7 +60,7 @@ Create a `.env.local` file similar to `.env.local.example`. [see](https://github
 ### Database
 - [MongoDB](https://www.mongodb.com/)
 
-Framework / Library
+## Framework / Library
 - [Next.js](https://nextjs.org/)
 - [mongoose](https://mongoosejs.com/)
 - [MDX](https://mdxjs.com/)
