@@ -4,6 +4,8 @@ import Image from 'next/image'
 import hello1 from '../public/hmmm1.png'
 import hello2 from '../public/hmmm2.png'
 import PageShell from '../components/PageShell'
+import MostHitPost from '../components/MostHitPost'
+import MostLikePost from '../components/MostLikePost'
 
 const Home = () => {
   const [helloImage, setHelloImage] = useState(hello1)
@@ -24,7 +26,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="px-4 py-5 my-5 text-center">
+      <div className="px-3 py-5 text-center">
         <a className="btn"><Image src={helloImage} width={120} height={120} onClick={hanldeToggleHelloImage} /></a>
         <h1 className="display-5 fw-bold">Hey, I'm Naz</h1>
         <div className="col-lg-6 mx-auto">
@@ -45,10 +47,21 @@ const Home = () => {
         </div>
       </div>
 
-      {/* TODO: Most Popular Listings */}
-      <div className="py-2">
-        <h2>Most Popular</h2>
-        <p className="fw-lighter lh-sm bg-light m-2 p-2">Coming soon...</p>
+      <div className="row">
+        <div className="col-md-6">
+          <div className="py-2">
+            <h2>Populars</h2>
+            <p className="fw-light text-muted">Top hit posts</p>
+            <MostHitPost />
+          </div>
+        </div>
+        <div className="col-md-6">
+          <div className="py-2">
+            <h2>Favourites</h2>
+            <p className="fw-light text-muted">Top like posts</p>
+            <MostLikePost />
+          </div>
+        </div>
       </div>
 
       {/* TODO: Courses &amp; Tutorials */}
