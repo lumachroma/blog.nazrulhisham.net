@@ -2,6 +2,7 @@ import nextConnect from 'next-connect'
 import { all } from '../../../../../middlewares'
 import BlogPost from '../../../../../models/BlogPost'
 
+const { NODE_ENV } = process.env
 const MAX_LIKES_HIT = 10 //TODO: move into .env
 
 const handler = nextConnect()
@@ -10,7 +11,11 @@ handler.use(all)
 
 handler.put(async (req, res) => {
   const { query: { slug } } = req
-  const { socket: { remoteAddress } } = req
+
+  let remoteAddress = req.socket.remoteAddress
+  if(NODE_ENV === 'production' && req.headers['x-real-ip']){
+    remoteAddress = req.headers['x-real-ip']
+  }
 
   try {
     const updatedPost = await BlogPost.findOneAndUpdate(
