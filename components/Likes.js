@@ -7,7 +7,7 @@ const MAX_LIKES_HIT = 10 //TODO: move into .env
 const Likes = ({ postSlug }) => {
   const endpoint = `/api/public/posts/${postSlug}`
   const contentType = 'application/json'
-  
+
   const [loading, setLoading] = useState(false)
   const { data, error, mutate } = useSWR(`${endpoint}/likes`, fetcher)
 
@@ -59,11 +59,13 @@ const Likes = ({ postSlug }) => {
         <a role="button" className="btn btn-link" onClick={handleGiveLike}>
           <i className={`bi ${getHeartIcon()} ${getHeartColor()} fs-3`} />
         </a>
+        <div className="progress" style={{ height: "3px" }}>
+          <div className="progress-bar bg-info" role="progressbar" style={{ width: `${progress}%` }} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <p>{' '}</p>
         <small><span className="fw-lighter">{likesCount} likes</span></small>
       </div>
-      <div className="progress" style={{ height: "3px" }}>
-        <div className="progress-bar bg-info" role="progressbar" style={{ width: `${progress}%` }} aria-valuenow={progress} aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
+
     </>
   )
 }
