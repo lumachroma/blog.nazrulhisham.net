@@ -12,10 +12,16 @@ const Portfolio = () => {
   )
 }
 
-const PortfolioPage = () => (
-  <PageShell name={"Portfolio"}>
-    <Portfolio />
-  </PageShell>
-)
+const PortfolioPage = () => {
+  const name = "Portfolio"
+  let description = "Portfolio od Nazrul Hisham, "
+  description += "his achievements, contributions and experiences. "
+
+  return (
+    <PageShell name={name} description={description}>
+      <Portfolio />
+    </PageShell>
+  )
+}
 
 export default PortfolioPage
