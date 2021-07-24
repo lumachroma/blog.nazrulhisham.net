@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <>
       <div className="px-3 py-5 text-center">
-        <a className="btn"><Image src={helloImage} width={120} height={120} onClick={hanldeToggleHelloImage} alt="Naz is thinking and working" /></a>
+        <Image src={helloImage} width={120} height={120} onClick={hanldeToggleHelloImage} alt="Naz is thinking and working" />
         <h1 className="display-5 fw-bold">Hey, I'm Naz</h1>
         <div className="col-lg-6 mx-auto">
           <p className="lead mb-4">
@@ -100,10 +100,20 @@ const Home = () => {
   )
 }
 
-const HomePage = () => (
-  <PageShell name={"Home"}>
-    <Home />
-  </PageShell>
-)
+const HomePage = () => {
+  const name = "Home"
+  let description = "Nazrul Hisham's blog "
+  description += "where he wish he could share his experiences and musings "
+  description += "by creating helpful and useful contents for software developers, programmers and techies. "
+  description += "Nazrul Hisham is a solution architect, tech lead, software engineer and programmer. "
+  description += "In his free time, he code. Mostly web and mobile applications "
+  description += "experimenting with latest, trending and cool cutting-edge technologies that he could lay his hands on. "
+  
+  return (
+    <PageShell name={name} description={description}>
+      <Home />
+    </PageShell>
+  )
+}
 
 export default HomePage
