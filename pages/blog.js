@@ -13,7 +13,7 @@ const Blog = ({ allPostsData }) => {
           With this blog, I wish I could share my experiences and musings {' '}
           by creating helpful and useful contents for my fellow developers and techies 👨‍💻👩‍💻. {' '}
           Enjoy and happy coding!
-          </p>
+        </p>
       </div>
 
       <div className="py-2">
@@ -43,11 +43,21 @@ const Blog = ({ allPostsData }) => {
   )
 }
 
-const BlogPage = ({ allPostsData }) => (
-  <PageShell name="Blog">
-    <Blog allPostsData={allPostsData} />
-  </PageShell>
-)
+const BlogPage = ({ allPostsData }) => {
+  const name = "Blog"
+  let description = "Nazrul Hisham's blog "
+  description += "where he wish he could share his experiences and musings "
+  description += "by creating helpful and useful contents for software developers, programmers and techies. "
+  description += "Nazrul Hisham is a solution architect, tech lead, software engineer and programmer. "
+  description += "In his free time, he code. Mostly web and mobile applications "
+  description += "experimenting with latest, trending and cool cutting-edge technologies that he could lay his hands on. "
+  
+  return (
+    <PageShell name={name} description={description}>
+      <Blog allPostsData={allPostsData} />
+    </PageShell>
+  )
+}
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
