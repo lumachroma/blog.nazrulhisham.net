@@ -12,10 +12,16 @@ const About = () => {
   )
 }
 
-const AboutPage = () => (
-  <PageShell name={"About"}>
-    <About />
-  </PageShell>
-)
+const AboutPage = () => {
+  const name = "About"
+  let description = "All about Nazrul Hisham, "
+  description += "both personally and professionally. "
+  
+  return (
+    <PageShell name={name} description={description}>
+      <About />
+    </PageShell>
+  )
+}
 
 export default AboutPage
