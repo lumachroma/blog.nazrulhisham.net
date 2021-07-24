@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <>
       <div className="px-3 py-5 text-center">
-        <a className="btn"><Image src={helloImage} width={120} height={120} onClick={hanldeToggleHelloImage} /></a>
+        <a className="btn"><Image src={helloImage} width={120} height={120} onClick={hanldeToggleHelloImage} alt="Naz is thinking and working" /></a>
         <h1 className="display-5 fw-bold">Hey, I'm Naz</h1>
         <div className="col-lg-6 mx-auto">
           <p className="lead mb-4">
@@ -76,7 +76,7 @@ const Home = () => {
                   <div className="d-flex align-items-start">
                     <i className={`bi ${icon} flex-shrink-0 me-3 fs-3 text-primary`} />
                     <div>
-                      <h5 className="fw-bold mb-0">Course title</h5>
+                      <h3 className="fw-bold mb-0">Course title</h3>
                       <p>Some descriptional paragraphs here.</p>
                     </div>
                   </div>
@@ -88,7 +88,7 @@ const Home = () => {
             <div key={i} className="col">
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">Course title</h5>
+                  <h3 className="card-title">Course title</h3>
                   <p className="card-text">Some descriptional paragraphs here.</p>
                 </div>
               </div>

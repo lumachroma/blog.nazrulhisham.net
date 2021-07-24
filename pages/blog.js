@@ -16,12 +16,6 @@ const Blog = ({ allPostsData }) => {
           </p>
       </div>
 
-      {/* TODO: Most Popular Listings */}
-      <div className="py-2">
-        <h2>Most Popular</h2>
-        <p className="fw-lighter lh-sm bg-light m-2 p-2">Coming soon...</p>
-      </div>
-
       <div className="py-2">
         <h2>All Posts</h2>
         <ul className="list-unstyled">
@@ -29,11 +23,11 @@ const Blog = ({ allPostsData }) => {
             allPostsData.map((postData) => {
               return (
                 <li key={postData.id}>
-                  <h4 className="fw-light">
+                  <h3 className="fw-light">
                     <Link href={`/blog/${postData.id}`}>
                       <a className="text-reset text-decoration-none">{postData.title}</a>
                     </Link>
-                  </h4>
+                  </h3>
                   <p className="fw-lighter">
                     <small><mark>{postData.date}</mark></small>
                     {' '}

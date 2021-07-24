@@ -10,36 +10,42 @@ const Header = ({ name }) => {
 
   return (
     <>
-      <header className="py-3 bg-light">
+      <header className="py-3 bg-light bg-gradient">
         <div className="container">
           <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <Link href="/">
               <a className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                <Image src={logo} width={80} height={80} />
+                <Image src={logo} width={80} height={80} alt="Naz's blog logo" />
                 <span className="gf-bangers-2x"><span className="text-warning">Naz</span>rul Hisham</span>
               </a>
             </Link>
             <ul className="nav nav-pills">
               {/* TODO: Theme ligt / dark mode */}
               <li className="nav-item">
-                <a className="btn nav-link text-muted">
-                  <i className="bi bi-moon-stars d-block mx-auto mb-1 fs-4" />
-                  <small>Mode</small>
-                </a>
+                <Link href="/coming-soon">
+                  <a className="btn nav-link text-dark">
+                    <i className="bi bi-moon-stars d-block mx-auto mb-1 fs-4" />
+                    <small>Mode</small>
+                  </a>
+                </Link>
               </li>
               {/* TODO: RSS Feed component */}
               <li className="nav-item">
-                <a className="btn nav-link text-muted">
-                  <i className="bi bi-rss d-block mx-auto mb-1 fs-4" />
-                  <small>RSS</small>
-                </a>
+                <Link href="/coming-soon">
+                  <a className="btn nav-link text-dark">
+                    <i className="bi bi-rss d-block mx-auto mb-1 fs-4" />
+                    <small>RSS</small>
+                  </a>
+                </Link>
               </li>
               {/* TODO: Treat me coffea component */}
               <li className="nav-item">
-                <a className="btn nav-link text-muted">
-                  <i className="bi bi-cup-straw d-block mx-auto mb-1 fs-4" />
-                  <small>😝</small>
-                </a>
+                <Link href="/coming-soon">
+                  <a className="btn nav-link text-dark">
+                    <i className="bi bi-cup-straw d-block mx-auto mb-1 fs-4" />
+                    <small>😝</small>
+                  </a>
+                </Link>
               </li>
             </ul>
           </div>

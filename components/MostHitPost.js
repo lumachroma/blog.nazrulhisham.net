@@ -24,7 +24,7 @@ const MostHitPost = () => {
                   <div>
                     <Link href={`/blog/${post.slug}`}>
                     <a className="text-decoration-none text-reset">
-                    <h4 className="fw-light">{post.title}</h4>
+                    <h3 className="fw-light">{post.title}</h3>
                     </a>
                     </Link>
                     <p className="fw-lighter">
