@@ -10,8 +10,8 @@ const ComingSoon = () => {
         </h1>
         {/* <h2><i className="bi bi-cone-striped" /></h2> */}
         <p className="lead">
-          Page is under construction. Stay tuned!{' '}
-          ⏰
+          Page is under construction.<br />
+          Stay tuned! ⏰<br />
         </p>
       </div>
     </>
